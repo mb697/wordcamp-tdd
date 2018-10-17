@@ -11,9 +11,13 @@ I recommend using [Vagrant](https://www.vagrantup.com/) and [Varying Vagrant Vag
 Alternatively, you can follow these instructions on [WordPress.Org](https://make.wordpress.org/core/handbook/testing/automated-testing/phpunit/)
 
 To test that you have everything ready to go, cd into this plugin's directory, on my local install this would be:
-```cd /srv/www/wordpress-default/public_html/wp-content/plugins/wordcamp-tdd```
+```
+cd /srv/www/wordpress-default/public_html/wp-content/plugins/wordcamp-tdd
+```
 and run: 
-```phpunit```
+```
+phpunit
+```
 
 All being well you will see:
 OK (1 test, 1 assertion)
