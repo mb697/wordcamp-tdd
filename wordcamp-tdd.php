@@ -7,12 +7,28 @@
  * Version: 0.0.1
  * Author: Matt Bush
  *
- * @package wordcamp-tdd
+ * @package wordcamp_tdd
  */
+
+namespace wordcamp_tdd;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+define( 'TDD_ABSPATH', dirname( __FILE__ ) . '/' );
+define( 'TDD_TEMPLATE_PATH', TDD_ABSPATH . 'templates/' );
 
+// Autoloader.
+require TDD_ABSPATH . 'lib/autoloader.php';
+
+/**
+ * Begins execution of the plugin.
+ */
+function run_plugin() {
+	$wordcamp_tdd = new includes\Wordcamp_Tdd();
+	add_action( 'plugins_loaded', [ $wordcamp_tdd, 'init' ], 2 );
+}
+
+add_action( 'plugins_loaded', __NAMESPACE__ . '\run_plugin', 1 );
