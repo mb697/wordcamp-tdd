@@ -77,10 +77,29 @@ class Admin {
 	 * @param array $args Settings arguments.
 	 */
 	public function wordcamp_tdd_settings_field_cb( $args ) {
-        $month_years = $this->month_year();
+
+        $this->datetime = new \DateTime();
+        $month_years    = $this->month_year();
+
 		include_once TDD_TEMPLATE_PATH . 'settings-section.php';
     }
     
+    /**
+     * DateTime object.
+     *
+     * @var object.
+     */
+    private $datetime = null;
+
+    /**
+     * Getter for $datetime.
+     *
+     * @return object DateTime object.
+     */
+    public function get_datetime() {
+        return $this->datetime;
+    }
+
     /**
      * Returns an array of months and years starting with the current month for the next 12 months.
      *
@@ -89,7 +108,7 @@ class Admin {
      */
     public function month_year() {
 
-        $date = new \DateTime();
+        $date = $this->get_datetime();
         $out  = [];
 
         for( $n = 0; $n < 12; $n++ ) {

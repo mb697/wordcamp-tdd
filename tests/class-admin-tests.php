@@ -13,18 +13,24 @@ namespace wordcamp_tdd\includes;
 class Admin_Tests extends \WP_UnitTestCase {
 
     /**
-     * Test for month and years,
-     * I wrote this test in October,
-     * WordCamp is in November,
-     * can you see why its going to fail?
+     * Improved test for month and years,
+     * still has a weakness though.
      */
     public function test_that_months_and_years_are_correctly_returned() {
 
+        // Set DateTime.
+        $date = new \DateTime( '2018-10-01' );
+
         // Double Admin class.
 		$admin = $this->getMockBuilder( __NAMESPACE__ . '\\Admin' )
-			->setMethods( null )
+			->setMethods( [ 'get_datetime' ] )
 			->disableOriginalConstructor()
             ->getMock();
+            
+		// Return our date object.
+		$admin->expects( $this->once() )
+			->method( 'get_datetime' )
+			->will( $this->returnValue( $date ) );
             
         $expected = [
             '10-2018',
