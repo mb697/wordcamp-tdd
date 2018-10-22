@@ -18,5 +18,9 @@ final class Wordcamp_Tdd {
 	public function init() {
 
         // Actions and Filters.
+		$admin = new Admin();
+
+		add_action( 'admin_menu', [ $admin, 'settings_page' ] );
+		add_action( 'admin_init', [ $admin, 'settings_api_init' ] );
 	}
 }
