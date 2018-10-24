@@ -13,20 +13,6 @@ namespace wordcamp_tdd\includes;
 class Admin {
 
 	/**
-	 * Options class.
-	 *
-	 * @var object.
-	 */
-	private $options;
-
-	/**
-	 * Tokens class.
-	 *
-	 * @var object.
-	 */
-	private $tokens;
-
-	/**
 	 * Register a CF Zoho Settings page.
 	 */
 	public function settings_page() {
