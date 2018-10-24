@@ -16,8 +16,8 @@ cd /srv/www/wordpress-default/public_html/wp-content/plugins/wordcamp-tdd
 ```
 and run: 
 ```
-phpunit
+phpunit tests/class-test-install.php
 ```
 
-All being well you will see:
+All being well you will see a cheesy message from me and:
 OK (1 test, 1 assertion)
