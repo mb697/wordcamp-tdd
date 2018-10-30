@@ -11,5 +11,17 @@
 		<testsuite>
 			<directory prefix="class-" suffix="-tests.php">./tests/</directory>
 		</testsuite>
+		<testsuite name="completed">
+			<directory prefix="class-" suffix="-tests.php">./tests/completed/</directory>
+		</testsuite>
+		<testsuite name="improved">
+			<directory prefix="class-" suffix="-tests.php">./tests/improved/</directory>
+		</testsuite>
 	</testsuites>
+	<groups>
+		<exclude>
+			<group>completed</group>
+			<group>improved</group>
+		</exclude>
+	</groups>
 </phpunit>

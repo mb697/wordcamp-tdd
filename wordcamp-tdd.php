@@ -27,8 +27,8 @@ require TDD_ABSPATH . 'lib/autoloader.php';
  * Begins execution of the plugin.
  */
 function run_plugin() {
-	$wordcamp_tdd = new includes\Wordcamp_Tdd();
-	add_action( 'plugins_loaded', [ $wordcamp_tdd, 'init' ], 2 );
+	$plugin = new includes\Example_Two();
+	add_action( 'plugins_loaded', [ $plugin, 'init' ], 2 );
 }
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\run_plugin', 1 );

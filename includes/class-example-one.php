@@ -1,7 +1,6 @@
 <?php
 /**
  * Is testing worthwhile?
- * Is $125m a lot of money?
  *
  * @package wordcamp_tdd/includes.
  */
@@ -12,7 +11,7 @@ namespace wordcamp_tdd\includes;
  * Conversion class.
  * Handles converting imperial units to metric.
  */
-class Conversion {
+class Example_One {
 
     /**
      * Takes a value in kilometers and converts it to miles.
